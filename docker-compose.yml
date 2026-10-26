@@ -1,0 +1,55 @@
+# NanoQA 部署编排（部署产物）
+# 开发环境无需 Docker：本机 PostgreSQL/Redis + `python manage.py runserver` + `npm run dev`
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-nanoqa}
+      POSTGRES_USER: ${POSTGRES_USER:-nanoqa}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nanoqa_dev_pw}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-nanoqa}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build: ./backend
+    environment:
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: ${POSTGRES_DB:-nanoqa}
+      DB_USER: ${POSTGRES_USER:-nanoqa}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-nanoqa_dev_pw}
+      REDIS_URL: redis://redis:6379/0
+      DJANGO_SETTINGS_MODULE: config.settings.production
+      SECRET_KEY: ${SECRET_KEY:-change-me-in-production}
+      MEDIA_ROOT: /data/media
+    volumes:
+      - media:/data/media
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
+  media:

@@ -1,0 +1,194 @@
+/* ============================================================
+ * Element Plus 主题映射 —— 将设计令牌注入 Element Plus CSS 变量
+ * ============================================================ */
+:root {
+  /* 品牌色 */
+  --el-color-primary: var(--accent-600);
+  --el-color-primary-light-3: var(--accent-300);
+  --el-color-primary-light-5: var(--accent-100);
+  --el-color-primary-light-7: var(--accent-50);
+  --el-color-primary-light-8: var(--accent-50);
+  --el-color-primary-light-9: var(--accent-50);
+  --el-color-primary-dark-2: var(--accent-700);
+
+  /* 语义色 */
+  --el-color-success: var(--success-600);
+  --el-color-success-light-9: var(--success-50);
+  --el-color-warning: var(--warning-600);
+  --el-color-warning-light-9: var(--warning-50);
+  --el-color-danger: var(--danger-600);
+  --el-color-danger-light-9: var(--danger-50);
+  --el-color-error: var(--danger-600);
+  --el-color-info: var(--info-600);
+  --el-color-info-light-9: var(--info-50);
+
+  /* 文字与描边 */
+  --el-text-color-primary: var(--text-primary);
+  --el-text-color-regular: var(--text-secondary);
+  --el-text-color-secondary: var(--text-tertiary);
+  --el-text-color-placeholder: var(--text-placeholder);
+  --el-text-color-disabled: var(--ink-300);
+  --el-border-color: var(--border-default);
+  --el-border-color-light: var(--border-default);
+  --el-border-color-lighter: var(--border-light);
+  --el-border-color-extra-light: var(--border-light);
+  --el-border-color-dark: var(--border-strong);
+
+  /* 填充 / 背景 */
+  --el-bg-color: var(--bg-surface);
+  --el-bg-color-page: var(--bg-page);
+  --el-fill-color-blank: var(--bg-surface);
+  --el-fill-color-light: var(--bg-sunken);
+  --el-fill-color-lighter: var(--ink-50);
+  --el-fill-color-extra-light: var(--ink-50);
+  --el-fill-color-dark: var(--ink-100);
+  --el-fill-color-darker: var(--ink-200);
+  --el-mask-color: rgba(20, 22, 28, 0.45);
+
+  /* 字体与圆角 */
+  --el-font-family: var(--font-sans);
+  --el-font-size-base: var(--fs-base);
+  --el-font-size-small: var(--fs-sm);
+  --el-font-size-extra-small: var(--fs-xs);
+  --el-font-size-medium: var(--fs-md);
+  --el-font-size-large: var(--fs-lg);
+  --el-border-radius-base: var(--radius-md);
+  --el-border-radius-small: var(--radius-sm);
+  --el-border-radius-round: var(--radius-pill);
+
+  /* 阴影 */
+  --el-box-shadow: var(--shadow-md);
+  --el-box-shadow-light: var(--shadow-sm);
+  --el-box-shadow-lighter: var(--shadow-sm);
+  --el-box-shadow-dark: var(--shadow-lg);
+}
+
+/* ---------- 全局细节打磨 ---------- */
+.el-button {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.el-button--primary {
+  --el-button-bg-color: var(--accent-600);
+  --el-button-border-color: var(--accent-600);
+  --el-button-hover-bg-color: var(--accent-500);
+  --el-button-hover-border-color: var(--accent-500);
+  --el-button-active-bg-color: var(--accent-700);
+  --el-button-active-border-color: var(--accent-700);
+}
+
+.el-input__wrapper,
+.el-textarea__inner,
+.el-select__wrapper {
+  box-shadow: 0 0 0 1px var(--border-default) inset;
+  transition: box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.el-input__wrapper:hover,
+.el-select__wrapper:hover {
+  box-shadow: 0 0 0 1px var(--border-strong) inset;
+}
+
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused {
+  box-shadow: 0 0 0 1px var(--accent-600) inset, var(--shadow-focus);
+}
+
+/* 表格：紧凑、悬停高亮、细线 */
+.el-table {
+  --el-table-border-color: var(--border-light);
+  --el-table-header-bg-color: var(--bg-sunken);
+  --el-table-header-text-color: var(--text-secondary);
+  --el-table-row-hover-bg-color: var(--bg-hover);
+  font-size: var(--fs-base);
+}
+
+.el-table th.el-table__cell {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.02em;
+}
+
+.el-table .cell {
+  line-height: var(--lh-tight);
+  padding: 0 var(--sp-3);
+}
+
+/* 对话框：大圆角、柔和投影 */
+.el-dialog {
+  --el-dialog-border-radius: var(--radius-lg);
+  --el-dialog-box-shadow: var(--shadow-lg);
+  --el-dialog-padding-primary: var(--sp-6);
+  border: 1px solid var(--border-light);
+}
+
+.el-dialog__title {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.el-dialog__headerbtn {
+  top: 6px;
+}
+
+/* 抽屉 / 弹出层 */
+.el-drawer {
+  border-left: 1px solid var(--border-light);
+}
+
+.el-popper.is-light {
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+}
+
+.el-dropdown-menu__item:not(.is-disabled):hover {
+  background-color: var(--bg-hover);
+  color: var(--accent-600);
+}
+
+/* 标签：克制、无饱和底色 */
+.el-tag {
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+}
+
+/* 卡片 */
+.el-card {
+  --el-card-border-color: var(--border-light);
+  --el-card-border-radius: var(--radius-lg);
+  --el-card-box-shadow: var(--shadow-sm);
+}
+
+/* 消息提示 */
+.el-message {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* 滚动条（细节质感） */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--ink-300);
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-400);
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}

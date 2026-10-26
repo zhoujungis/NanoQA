@@ -1,0 +1,143 @@
+/* ============================================================
+ * NanoQA 设计令牌（Design Tokens）
+ * 气质：高级、简洁、有质感 —— 墨色中性灰阶 + 克制靛蓝强调
+ * ============================================================ */
+:root {
+  /* ---- 墨色灰阶（主中性色，带轻微冷调） ---- */
+  --ink-900: #14161c;
+  --ink-800: #22252e;
+  --ink-700: #3a3f4c;
+  --ink-600: #565d6e;
+  --ink-500: #79808f;
+  --ink-400: #9aa1af;
+  --ink-300: #c3c8d2;
+  --ink-200: #dfe2e9;
+  --ink-100: #eceef3;
+  --ink-50: #f5f6f9;
+
+  /* ---- 强调色（靛蓝，低饱和不刺眼） ---- */
+  --accent-700: #31448c;
+  --accent-600: #3d55a4;
+  --accent-500: #4a63b4;
+  --accent-300: #7285bd;
+  --accent-100: #d1d7e8;
+  --accent-50: #eef1f9;
+
+  /* ---- 语义状态色 ---- */
+  --success-600: #2f8f5e;
+  --success-50: #e9f5ef;
+  --warning-600: #b07c22;
+  --warning-50: #faf2e2;
+  --danger-600: #c04545;
+  --danger-50: #fbecec;
+  --info-600: #6b7280;
+  --info-50: #f0f1f4;
+
+  /* ---- 测试状态语义 ---- */
+  --status-pass: var(--success-600);
+  --status-fail: var(--danger-600);
+  --status-block: var(--warning-600);
+  --status-skip: var(--ink-400);
+  --status-notrun: var(--ink-400);
+
+  /* ---- 表面与背景 ---- */
+  --bg-page: var(--ink-50);
+  --bg-surface: #ffffff;
+  --bg-sunken: var(--ink-100);
+  --bg-hover: rgba(61, 85, 164, 0.05);
+  --bg-active: rgba(61, 85, 164, 0.09);
+
+  /* ---- 文字 ---- */
+  --text-primary: var(--ink-900);
+  --text-secondary: var(--ink-600);
+  --text-tertiary: var(--ink-500);
+  --text-placeholder: var(--ink-400);
+  --text-inverse: #ffffff;
+
+  /* ---- 描边 ---- */
+  --border-light: var(--ink-100);
+  --border-default: var(--ink-200);
+  --border-strong: var(--ink-300);
+
+  /* ---- 圆角（小圆角，克制） ---- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+
+  /* ---- 阴影（低对比多层，柔和） ---- */
+  --shadow-sm: 0 1px 2px rgba(20, 22, 28, 0.05);
+  --shadow-md: 0 2px 8px rgba(20, 22, 28, 0.07), 0 1px 2px rgba(20, 22, 28, 0.04);
+  --shadow-lg: 0 12px 32px rgba(20, 22, 28, 0.12), 0 2px 8px rgba(20, 22, 28, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(61, 85, 164, 0.18);
+
+  /* ---- 字体 ---- */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", "SF Mono", Consolas,
+    "Courier New", monospace;
+
+  /* ---- 字号与行高（偏紧凑，工作型界面） ---- */
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-base: 13px;
+  --fs-md: 14px;
+  --fs-lg: 16px;
+  --fs-xl: 20px;
+  --fs-2xl: 26px;
+  --lh-tight: 1.35;
+  --lh-base: 1.6;
+
+  /* ---- 间距刻度 ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+
+  /* ---- 布局 ---- */
+  --sidebar-w: 200px;
+  --topbar-h: 52px;
+
+  /* ---- 动效（快而轻） ---- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 0.15s;
+  --dur-base: 0.22s;
+
+  /* ---- 层级 ---- */
+  --z-sticky: 100;
+  --z-drawer: 1200;
+  --z-dialog: 1300;
+  --z-message: 1600;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  color: var(--text-primary);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(61, 85, 164, 0.18);
+}
