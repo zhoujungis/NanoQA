@@ -6,6 +6,7 @@ AI 原生的测试用例管理 / 测试执行 / 缺陷协同平台。以「需�
 
 ## 目录
 
+- [界面预览](#界面预览)
 - [功能全景](#功能全景)
 - [质量闭环](#质量闭环)
 - [系统架构](#系统架构)
@@ -22,6 +23,44 @@ AI 原生的测试用例管理 / 测试执行 / 缺陷协同平台。以「需�
 - [Docker 部署](#docker-部署)
 - [开发规范](#开发规范)
 - [常见问题](#常见问题)
+
+---
+
+## 界面预览
+
+> 截图取自演示数据（项目 SHOP，`admin@nanoqa.dev`），分辨率 1600×1000。
+
+**项目概览：用例 / 执行进度 / 通过率 / 缺陷 / 需求覆盖率六项概览**
+
+![项目概览](docs/screenshots/01-overview.png)
+
+| 需求覆盖 | 用例管理 |
+| --- | --- |
+| ![需求覆盖](docs/screenshots/02-requirements.png) | ![用例管理](docs/screenshots/03-testcases.png) |
+
+| 用例详情（步骤 / 版本历史） | 测试计划（选例 / 分配 / 发起执行） |
+| --- | --- |
+| ![用例详情](docs/screenshots/04-testcase-detail.png) | ![测试计划](docs/screenshots/05-testplan-detail.png) |
+
+| 测试执行（P/F/B/S/N 快捷键） | 测试报告（ECharts 分布与模块通过率） |
+| --- | --- |
+| ![测试执行](docs/screenshots/06-run-execution.png) | ![测试报告](docs/screenshots/07-run-report.png) |
+
+| 缺陷列表 | 缺陷详情（状态机 / 多维关联） |
+| --- | --- |
+| ![缺陷列表](docs/screenshots/08-defects.png) | ![缺陷详情](docs/screenshots/09-defect-detail.png) |
+
+| AI 助手（草案生成 + 人工审核） | 角色权限（5 角色 × 27 权限） |
+| --- | --- |
+| ![AI 助手](docs/screenshots/10-ai-workspace.png) | ![角色权限](docs/screenshots/11-roles.png) |
+
+| 审计日志（字段级 diff） | 工作台 |
+| --- | --- |
+| ![审计日志](docs/screenshots/12-audit.png) | ![工作台](docs/screenshots/13-workbench.png) |
+
+**命令面板（`Ctrl+K`）：页面 / 项目 / 用例 / 缺陷四组检索**
+
+![命令面板](docs/screenshots/14-command-palette.png)
 
 ---
 
