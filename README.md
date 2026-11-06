@@ -450,3 +450,11 @@ docker compose up -d
 
 **导入 XLSX 报错？**
 确认文件不超 10MB、表头含「标题」列；导入向导第二步可手动映射字段，非法行会在预览步逐行标注并跳过。
+
+---
+
+## 相关阅读
+
+- 博客：[尘世栈帧 · 技术、编程、AI 与科学](https://blog.zhoujun.dev/)
+- 项目专题：[开源项目拆解](https://blog.zhoujun.dev/topics/projects/)
+- 背景文章：[从零搭建测试管理系统：Vue 3 + Django 全栈实战](https://blog.zhoujun.dev/article/test-manage-system-vue-django/)
